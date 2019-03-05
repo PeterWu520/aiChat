@@ -1,7 +1,9 @@
 package com.example.peterwu.aichat.controller.fragment;
 
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
@@ -142,7 +144,23 @@ public class ContactListFragment extends EaseContactListFragment {
     public boolean onContextItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.contact_delete){
             //删除选中的联系人
-            deleteContact();
+            AlertDialog dialog = new AlertDialog.Builder(getActivity())
+                    .setTitle("删除好友")
+                    .setMessage("确定要删除" + userHxid + "吗")
+                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            deleteContact();
+                        }
+                    })
+                    .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            return;
+                        }
+                    }).create();
+            dialog.show();
+
             return true;
         }
         return super.onContextItemSelected(item);
