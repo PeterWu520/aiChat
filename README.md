@@ -6,3 +6,5 @@
 ![注册界面](https://github.com/PeterWu520/aiChat/blob/master/images/Screenshot_20181219-220116.jpg)
 ### 通讯录
 ![通讯录](https://github.com/PeterWu520/aiChat/blob/master/images/微信图片_20181222121942.jpg)
+### 会话页面
+![会话页面](https://github.com/PeterWu520/aiChat/blob/master/images/Screenshot_20190209-194302.jpg)
